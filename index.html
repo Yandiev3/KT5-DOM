@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Card</title>
+</head>
+<body>
+    <div class="d">    
+        <div class="dd">
+            <div class="nb">
+                <input type="text" id="nb" oninput="a()" placeholder="Название банка">
+            </div>
+            <div class="nc">
+                <input type="number" placeholder="Номер карты" id="nc" oninput="aa()">
+            </div>
+            <div class="ic">
+                <input type="text" id="ic" placeholder="Имя" oninput="aaa()">
+            </div>
+            <div class="ockc">
+                <input type="number" id="ockc" oninput="aaaa()" placeholder="Месяц и год окончания">
+            </div>
+            <button id="btn" onclick="insertData()">Nt</button>
+        </div>
+
+    <div class="card">
+        <div class="nb2">БАНК ЧЕЛОВЕКА ПАУКА</div>
+        <div class="nc2" id="nc2">0000-0000-0000-0000</div>
+        <div class="ic2">Альбус</div>
+        <div class="ockc2">22/24</div>
+    </div>
+</div>
+
+    <form id="f">
+        <table id="tt">
+            <thead>
+                <tr>
+                    <td>Название банка</td>
+                    <td>Номер карты</td>
+                    <td>Владелец карты</td>
+                    <td>Дата окончания</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+    <script>
+        function insertData(){
+    // Получить данные из каждого поля ввода
+    let data1 = document.getElementById('nb').value;
+    let data2 = document.getElementById('nc').value;
+    let data3 = document.getElementById('ic').value;
+    let data4 = document.getElementById('ockc').value;
+
+    // Создать новую строку для таблицы
+    let row = document.createElement('tr');
+
+    // Для каждого значения создать новую ячейку и добавить ее в строку
+    [data1, data2, data3, data4].forEach(function(data) {
+        let cell = document.createElement('td');
+        cell.textContent = data;
+        row.appendChild(cell);
+    });
+        // Добавить строку в тело таблицы
+    document.getElementById('tt').getElementsByTagName('tbody')[0].appendChild(row);
+}
+        // function table(){
+        //     let t = document.querySelector("#nb").value
+        //     document.getElementById("1").innerText = t;
+        //     let t1 = document.querySelector("#nc").value
+        //     document.getElementById("2").innerText = t1;
+        //     let t2 = document.querySelector("#ic").value
+        //     document.getElementById("3").innerText = t2;
+        //     let t3 = document.querySelector("#ockc").value
+        //     document.getElementById("4").innerText = t3;
+        // }
+        
+
+
+        const btn = document.getElementById("btn")
+        btn.addEventListener('click', function(){
+            
+        })
+        function aa(){
+            let aa = document.getElementById("nc").value
+            document.getElementById("nc2").innerHTML = aa
+        }
+        function a(){
+            let a = document.getElementById("nb").value
+            document.querySelector(".nb2").innerHTML = a 
+        }
+        function aaa(){
+            let a = document.querySelector("#ic").value
+            document.querySelector(".ic2").innerHTML = a 
+        }
+        function aaaa(){
+            let a = document.querySelector("#ockc").value
+            document.querySelector(".ockc2").innerHTML = a 
+        }
+    </script>
+
+</html>
